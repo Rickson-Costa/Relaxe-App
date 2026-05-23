@@ -59,26 +59,36 @@ val CoralAlert = Color(0xFFFF6B6B)  // Delicate red/coral for crisis alert
 @Composable
 fun DecorativeBackground() {
     Canvas(
-        modifier = Modifier
-            .fillMaxSize()
-            .blur(80.dp)
+        modifier = Modifier.fillMaxSize()
     ) {
         // Upper-left cyan glowing pool
         drawCircle(
-            color = Color(0xFF0D9488).copy(alpha = 0.22f),
-            radius = 350f,
+            brush = Brush.radialGradient(
+                colors = listOf(Color(0xFF0D9488).copy(alpha = 0.22f), Color.Transparent),
+                center = Offset(size.width * 0.2f, size.height * 0.25f),
+                radius = 500f
+            ),
+            radius = 500f,
             center = Offset(size.width * 0.2f, size.height * 0.25f)
         )
         // Lower-right indigo oceanic depth pool
         drawCircle(
-            color = Color(0xFF312E81).copy(alpha = 0.24f),
-            radius = 480f,
+            brush = Brush.radialGradient(
+                colors = listOf(Color(0xFF312E81).copy(alpha = 0.24f), Color.Transparent),
+                center = Offset(size.width * 0.85f, size.height * 0.8f),
+                radius = 600f
+            ),
+            radius = 600f,
             center = Offset(size.width * 0.85f, size.height * 0.8f)
         )
         // Auxiliary center glow
         drawCircle(
-            color = Color(0xFF115E59).copy(alpha = 0.12f),
-            radius = 280f,
+            brush = Brush.radialGradient(
+                colors = listOf(Color(0xFF115E59).copy(alpha = 0.12f), Color.Transparent),
+                center = Offset(size.width * 0.5f, size.height * 0.5f),
+                radius = 400f
+            ),
+            radius = 400f,
             center = Offset(size.width * 0.5f, size.height * 0.5f)
         )
     }
@@ -965,7 +975,7 @@ fun HistoryScreen(
 
 @Composable
 fun HistoryItemCard(session: SessionEntity) {
-    val formatter = remember { SimpleDateFormat("dd 'de' MMM ', ' HH:mm", Locale("pt", "BR")) }
+    val formatter = remember { SimpleDateFormat("dd 'de' MMM ', ' HH:mm", Locale.forLanguageTag("pt-BR")) }
     val formattedDate = remember(session.timestamp) { formatter.format(Date(session.timestamp)) }
 
     Row(
@@ -1124,7 +1134,7 @@ fun MinimalistChart(sessions: List<SessionEntity>) {
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                val format = remember { SimpleDateFormat("EEE", Locale("pt", "BR")) }
+                val format = remember { SimpleDateFormat("EEE", Locale.forLanguageTag("pt-BR")) }
                 val labels = remember {
                     val list = mutableListOf<String>()
                     val calendarDay = Calendar.getInstance()

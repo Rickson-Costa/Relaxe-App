@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Central Glow Ring -->
+    <path
+        android:fillColor="#1F2DD4BF"
+        android:pathData="M54,54m-26,0a26,26 0,1 1,52 0a26,26 0,1 1,-52 0" />
+
+    <!-- Outer Ring -->
+    <path
+        android:strokeColor="#402DD4BF"
+        android:strokeWidth="1.5"
+        android:fillColor="#00000000"
+        android:pathData="M54,54m-20,0a20,20 0,1 1,40 0a20,20 0,1 1,-40 0" />
+
+    <!-- Lotus Leaves / Petals -->
+    <!-- Center vertical loop -->
+    <path
+        android:pathData="M54,38 C57,44 57,59 54,70 C51,59 51,44 54,38 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="54"
+                android:startY="38"
+                android:endX="54"
+                android:endY="70"
+                android:type="linear">
+                <item android:offset="0" android:color="#5EEAD4" />
+                <item android:offset="1" android:color="#2DD4BF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    
+    <!-- Left diagonal loop -->
+    <path
+        android:pathData="M54,54 C46,46 36,48 44,62 C50,56 50,56 54,54 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="44"
+                android:startY="46"
+                android:endX="54"
+                android:endY="62"
+                android:type="linear">
+                <item android:offset="0" android:color="#E2E8F0" />
+                <item android:offset="1" android:color="#94A3B8" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Right diagonal loop -->
+    <path
+        android:pathData="M54,54 C62,46 72,48 64,62 C58,56 58,56 54,54 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="64"
+                android:startY="46"
+                android:endX="54"
+                android:endY="62"
+                android:type="linear">
+                <item android:offset="0" android:color="#E2E8F0" />
+                <item android:offset="1" android:color="#94A3B8" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Small Core Sphere -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,54m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+
+</vector>

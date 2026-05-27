@@ -102,6 +102,9 @@ class SoothingSoundSynth {
                             break
                         } else if (trackBytesWritten == 0) {
                             kotlinx.coroutines.delay(10)
+                        } else {
+                            // If audioTrack doesn't block on this emulator, just yield to avoid thread stall
+                            kotlinx.coroutines.yield()
                         }
                     } else {
                         break

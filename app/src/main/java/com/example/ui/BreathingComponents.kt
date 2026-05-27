@@ -442,10 +442,10 @@ fun PremiumBreathingScreen(viewModel: SessionViewModel) {
                 Box(
                     modifier = Modifier
                         .size(210.dp)
-                        .graphicsLayer(
-                            scaleX = orbScale * 1.15f * pulseFactor,
+                        .graphicsLayer {
+                            scaleX = orbScale * 1.15f * pulseFactor
                             scaleY = orbScale * 1.15f * pulseFactor
-                        )
+                        }
                         .border(1.dp, AccentColor.copy(alpha = 0.25f), CircleShape)
                 )
 
@@ -453,10 +453,10 @@ fun PremiumBreathingScreen(viewModel: SessionViewModel) {
                 Box(
                     modifier = Modifier
                         .size(180.dp)
-                        .graphicsLayer(
-                            scaleX = orbScale * pulseFactor,
+                        .graphicsLayer {
+                            scaleX = orbScale * pulseFactor
                             scaleY = orbScale * pulseFactor
-                        )
+                        }
                         .border(1.5.dp, Brush.radialGradient(listOf(Color.White.copy(alpha = 0.35f), AccentColor.copy(alpha = 0.15f))), CircleShape)
                 )
 
@@ -464,10 +464,10 @@ fun PremiumBreathingScreen(viewModel: SessionViewModel) {
                 Box(
                     modifier = Modifier
                         .size(145.dp)
-                        .graphicsLayer(
-                            scaleX = orbScale,
+                        .graphicsLayer {
+                            scaleX = orbScale
                             scaleY = orbScale
-                        )
+                        }
                         .clip(CircleShape)
                         .background(BgLight.copy(alpha = 0.75f))
                         .border(2.dp, Brush.verticalGradient(listOf(Color.White.copy(alpha = 0.15f), AccentColor)), CircleShape),
